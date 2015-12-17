@@ -24,6 +24,7 @@ SRC =		ft_atoi.c		ft_bzero.c		ft_isalnum.c\
 			ft_aredigit.c	ft_create_tab.c	ft_expand_tab.c\
 			ft_print_tab.c	ft_free_tab.c	ft_find_diff.c\
 			ft_rootnb.c
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
@@ -42,4 +43,3 @@ fclean: clean
 	@rm -f $(OBJ) $(NAME)
 
 re: fclean all
-
