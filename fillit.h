@@ -6,7 +6,7 @@
 /*   By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 11:56:52 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/15 11:01:53 by ksoulard         ###   ########.fr       */
+/*   Updated: 2015/12/17 17:24:44 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void				check_file(t_tetra **list, int fd, t_err e);
 int					check_shape(char *str, t_err e, char **minos);
 void				check_shape2(t_err e, char **minos, int *nb);
 void				init_err(t_err *e);
+char				check_maguel(char **tab, t_err e);
 int					find_first_pos(char **str);
 int					check_minos(t_tetra *list, t_err e);
 void				list_push_back(t_tetra **list, char *minos);

@@ -6,7 +6,7 @@
 /*   By: ksoulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 11:27:43 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/17 16:30:09 by ksoulard         ###   ########.fr       */
+/*   Updated: 2015/12/17 17:36:02 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ int				check_minos(t_tetra *list, t_err e)
 		return (-1);
 	}
 	check_shape2(e, minos, list->nb);
+	if ((check_maguel(minos, e)) == -1)
+	{
+		ft_free_tab(minos);
+		return (-1);
+	}
 	if ((check_tab(list->nb, 0)) == -1)
 	{
 		ft_free_tab(minos);
@@ -57,10 +62,7 @@ void			check_shape2(t_err e, char **minos, int *nb)
 					nb[0]++;
 				coor++;
 				if (nb[1] < ((first_pos - e.j) * -1) + 1)
-				{
 					nb[1] = ((first_pos - e.j) * -1) + 1;
-				printf("first:%d e.j:%d ", first_pos, e.j);
-				}
 			}
 		}
 	}
@@ -118,13 +120,12 @@ void			check_file(t_tetra **list, int fd, t_err e)
 			perm = 1;
 		}
 	}
-	if (ret == -1 || e.i > 520  || perm == 1 || e.i == 0)
+	if (ret == -1 || e.i > 520 || perm == 1 || e.i == 0)
 		print_error("\n", *list);
 }
 
 int				check_tab(int *tab, int check)
 {
-	printf("%d %d", tab[0], tab[1]);
 	if (tab[0] == 1)
 	{
 		if (tab[1] != 4)
