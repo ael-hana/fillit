@@ -6,7 +6,7 @@
 /*   By: ael-hana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 10:52:12 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/18 08:55:18 by ksoulard         ###   ########.fr       */
+/*   Updated: 2015/12/18 09:33:00 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,14 @@ char				**ft_backtracking(t_tetra *list)
 		tmp = tmp->next;
 	}
 	num = ft_rootnb((i * 4));
-	tab = create_mp(num);
+	if ((tab = create_mp(num)) == NULL)
+		print_error("\n", list);
 	while (ft_resolver(list, tab, 0, 'A'))
 	{
 		ft_free_tab(tab);
 		num++;
-		tab = create_mp(num);
+		if ((tab = create_mp(num)) == NULL)
+			print_error("\n", list);
 	}
 	return (tab);
 }
