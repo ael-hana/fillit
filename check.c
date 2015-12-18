@@ -6,7 +6,7 @@
 /*   By: ksoulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 11:27:43 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/17 17:36:02 by ksoulard         ###   ########.fr       */
+/*   Updated: 2015/12/18 08:35:06 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int				check_minos(t_tetra *list, t_err e)
 {
 	char		**minos;
-
 	init_err(&e);
 	minos = ft_strsplit(list->minos, '\n');
 	if (check_shape(list->minos, e, minos) == -1)

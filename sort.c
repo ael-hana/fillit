@@ -6,7 +6,7 @@
 /*   By: ael-hana <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/09 10:52:12 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/17 16:02:11 by ksoulard         ###   ########.fr       */
+/*   Updated: 2015/12/18 08:35:34 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ char				**create_mp(int x)
 	int				i;
 	int				j;
 
-	if (x < 4)
-		x = 4;
+	if (x < 2)
+		x = 2;
 	i = 0;
 	if (!(tab = (char **)malloc(sizeof(char *) * (x + 1))))
 		return (NULL);

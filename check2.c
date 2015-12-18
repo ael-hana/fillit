@@ -6,7 +6,7 @@
 /*   By: ksoulard <ksoulard@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/17 17:24:04 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/17 17:35:22 by ksoulard         ###   ########.fr       */
+/*   Updated: 2015/12/18 08:35:07 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char			check_maguel(char **tab, t_err e)
 				minos++;
 			else if (((e.i - 1) > -1) && (tab[e.i - 1][e.j] == '#'))
 				minos++;
-			else
+			else if (tab[e.i][e.j] == '#')
 				return (-1);
 			e.j++;
 		}

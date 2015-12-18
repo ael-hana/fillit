@@ -11,12 +11,12 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-		make -C libft/ fclean
-		make -C libft/
-		$(CC) $(OBJ) $(FLAGS) -L libft/ -lft -o $(NAME)
+		@make -C libft/ fclean
+		@make -C libft/
+		@$(CC) $(OBJ) $(FLAGS) -L libft/ -lft -o $(NAME)
 
 %.o: %.c
-	$(CC) -o $@ -c $< $(FLAGS) -I libft/
+	@$(CC) -o $@ -c $< $(FLAGS) -I libft/
 
 clean:
 	@rm -f $(OBJ)
