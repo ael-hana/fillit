@@ -6,7 +6,7 @@
 /*   By: ksoulard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/14 11:27:43 by ksoulard          #+#    #+#             */
-/*   Updated: 2015/12/18 08:42:52 by ael-hana         ###   ########.fr       */
+/*   Updated: 2015/12/18 09:07:14 by ksoulard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ void			check_file(t_tetra **list, int fd, t_err e)
 		if ((ret = read(fd, buf, 20)) > 0)
 		{
 			e.i += ret;
-			buf[20] = '\0';
+			buf[ret] = '\0';
 			list_push_back(list, buf);
 			perm = 0;
 		}
